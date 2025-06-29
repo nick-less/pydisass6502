@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 
 #
 #   PyDisAss6502 by Ingo Hinterding 2021
@@ -16,10 +16,15 @@ import sys
 def load_json(filename):
     with open(filename) as f:
         data = json.load(f)
+        # make sure addresses are lower case
+        for e in data.get("mapping", []):
+            if "addr" in e:
+                    e["addr"] = e["addr"].lower()
+
     return data
 
 
-def load_file(filename):
+def load_file(filename,start=0):
     """
     input: filename
     returns: startaddress (int), bytes
@@ -34,10 +39,13 @@ def load_file(filename):
         byte = file.read(1)
         bytecode.append(i)
     file.close()
+    if start == 0:
+        startaddress = (bytecode[1] << 8) + bytecode[0]
+        bytecode = bytecode[2:]  # remove first 2 bytes
+    else:
+        startaddress = start
 
-    startaddress = (bytecode[1] << 8) + bytecode[0]
-    bytecode = bytecode[2:]  # remove first 2 bytes
-    print("loading: "+filename)
+    print("loading: "+filename+ " start: "+hex(startaddress))
     return(startaddress, bytecode)
 
 
@@ -327,7 +335,7 @@ def analyze(startaddr, bytes, opcodes, entrypoints):
 #   command line interface
 #
 #
-
+startaddr = 0
 
 # Create the parser
 my_parser = argparse.ArgumentParser(
@@ -344,6 +352,12 @@ my_parser.add_argument('-o', '--output',
 
 my_parser.add_argument('-e', '--entrypoints',
                        help="use entrypoints.json")
+
+my_parser.add_argument('-t', '--systype',
+                       help="set system type for comments")
+
+my_parser.add_argument('-s', '--startaddr',
+                       help="set start address")
 
 my_parser.add_argument('-nc', '--nocomments', action='store_true',
                        help="do not add any comments to the output file")
@@ -365,11 +379,15 @@ print("\x1b[33;21m")
 # load the opcodes list
 opcodes = load_json(dir_path + "/lib/opcodes.json")
 
+systype = "c64"
+
 if args.output:
     output = args.output
 else:
     output = str(args.input + ".asm")
 
+if args.systype:
+    systype = args.systype
 
 if args.entrypoints:
     entrypoints = load_json(args.entrypoints)
@@ -381,12 +399,15 @@ if args.nocomments:
     mapping = False
     print("omitting comments")
 else:
-    mapping = load_json(dir_path + "/lib/c64-mapping.json")
-    print("using comments")
+    mapping = load_json(dir_path + "/lib/"+systype+"-mapping.json")
+    print("using comments for "+systype)
+
+if args.startaddr:
+   startaddr = int (args.startaddr, 16)
 
 
 # load prg
-startaddress, bytes = load_file(args.input)
+startaddress, bytes = load_file(args.input, startaddr)
 # print_bytes_as_hex(bytes)
 
 # turn bytes into asm code
