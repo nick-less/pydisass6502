@@ -1,0 +1,43 @@
+{
+  "mapping": [
+    { "addr": "FF3E", "comm": "ROM Configuration Register" },
+    { "addr": "FF3F", "comm": "RAM Configuration Register" },
+
+    { "addr": "FF00", "comm": "TED Control Register 1 (Video Mode, Border Color)" },
+    { "addr": "FF01", "comm": "TED Control Register 2 (Screen Color, Flash)" },
+    { "addr": "FF02", "comm": "TED Raster Counter Low" },
+    { "addr": "FF03", "comm": "TED Raster Counter High" },
+    { "addr": "FF04", "comm": "TED Lightpen X" },
+    { "addr": "FF05", "comm": "TED Lightpen Y" },
+    { "addr": "FF06", "comm": "TED Sound Frequency" },
+    { "addr": "FF07", "comm": "TED Sound Control" },
+    { "addr": "FF08", "comm": "TED Timer A Low" },
+    { "addr": "FF09", "comm": "TED Timer A High" },
+    { "addr": "FF0A", "comm": "TED Timer B Low" },
+    { "addr": "FF0B", "comm": "TED Timer B High" },
+    { "addr": "FF0C", "comm": "TED Interrupt Mask" },
+    { "addr": "FF0D", "comm": "TED Interrupt Status" },
+    { "addr": "FF0E", "comm": "TED Character Base Address" },
+    { "addr": "FF0F", "comm": "TED Screen Base Address" },
+
+    { "addr": "FD30", "comm": "CIA Port A (Keyboard Matrix, Joystick, Cassette)" },
+
+    { "addr": "FD00", "comm": "Keyboard Row 0" },
+    { "addr": "FD01", "comm": "Keyboard Row 1" },
+    { "addr": "FD02", "comm": "Keyboard Row 2" },
+    { "addr": "FD03", "comm": "Keyboard Row 3" },
+    { "addr": "FD04", "comm": "Keyboard Row 4" },
+    { "addr": "FD05", "comm": "Keyboard Row 5" },
+    { "addr": "FD06", "comm": "Keyboard Row 6" },
+    { "addr": "FD07", "comm": "Keyboard Row 7" },
+
+    { "addr": "FD10", "comm": "Cassette Motor Control" },
+    { "addr": "FD11", "comm": "Cassette Read" },
+
+    { "addr": "FD30", "comm": "Joystick Port (shared with Keyboard)" },
+
+    { "addr": "FD40", "comm": "IEC Serial Data" },
+    { "addr": "FD41", "comm": "IEC Serial Clock" },
+    { "addr": "FD42", "comm": "IEC ATN Line" }
+  ]
+}

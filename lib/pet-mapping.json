@@ -1,0 +1,79 @@
+{
+  "mapping": [
+
+    { "addr": "E810", "comm": "PIA1 Port A (Keyboard Row Select)" },
+    { "addr": "E811", "comm": "PIA1 Control A" },
+    { "addr": "E812", "comm": "PIA1 Port B (Keyboard Column Read)" },
+    { "addr": "E813", "comm": "PIA1 Control B" },
+
+    { "addr": "E820", "comm": "PIA2 Port A (IEEE Data)" },
+    { "addr": "E821", "comm": "PIA2 Control A" },
+    { "addr": "E822", "comm": "PIA2 Port B (IEEE Control)" },
+    { "addr": "E823", "comm": "PIA2 Control B" },
+
+    { "addr": "E840", "comm": "VIA Port B" },
+    { "addr": "E841", "comm": "VIA Port A" },
+    { "addr": "E842", "comm": "VIA DDR B" },
+    { "addr": "E843", "comm": "VIA DDR A" },
+    { "addr": "E844", "comm": "VIA Timer 1 Low" },
+    { "addr": "E845", "comm": "VIA Timer 1 High" },
+    { "addr": "E846", "comm": "VIA Timer 1 Latch Low" },
+    { "addr": "E847", "comm": "VIA Timer 1 Latch High" },
+    { "addr": "E848", "comm": "VIA Timer 2 Low" },
+    { "addr": "E849", "comm": "VIA Timer 2 High" },
+    { "addr": "E84A", "comm": "VIA Shift Register" },
+    { "addr": "E84B", "comm": "VIA Auxiliary Control" },
+    { "addr": "E84C", "comm": "VIA Peripheral Control" },
+    { "addr": "E84D", "comm": "VIA Interrupt Flag" },
+    { "addr": "E84E", "comm": "VIA Interrupt Enable" },
+    { "addr": "E84F", "comm": "VIA Control Register" },
+
+    { "addr": "E880", "comm": "CRTC Address Register" },
+    { "addr": "E881", "comm": "CRTC Data Register" },
+
+    { "addr": "ffd2", "comm": "CHROUT – Output a character to the current output device" },
+    { "addr": "ffcf", "comm": "CHRIN – Input a character from the current input device" },
+    { "addr": "ffc6", "comm": "GETIN – Get character from keyboard buffer (non-blocking)" },
+    { "addr": "ffba", "comm": "SETLFS – Set logical file number, device number, and secondary address" },
+    { "addr": "ffbd", "comm": "SETNAM – Set filename and length for file operations" },
+    { "addr": "ffc0", "comm": "OPEN – Open a file or device" },
+    { "addr": "ffc3", "comm": "CLOSE – Close a file or device" },
+    { "addr": "ffc9", "comm": "CHKIN – Set current input channel" },
+    { "addr": "ffcc", "comm": "CHKOUT – Set current output channel" },
+    { "addr": "ffb7", "comm": "CLALL – Close all open channels and files" },
+    { "addr": "ffae", "comm": "LOAD – Load a file into memory (also used for VERIFY)" },
+    { "addr": "ffd5", "comm": "SAVE – Save a section of memory to a file" },
+    { "addr": "ffe1", "comm": "STOP – Check if STOP key was pressed" },
+    { "addr": "ffe4", "comm": "GET – Wait for a keypress and return the character" },
+    { "addr": "ffe7", "comm": "CLRSCR – Clear the screen (PET-specific function)" },
+    { "addr": "fff0", "comm": "KERNAL Cold Start – Reset system and initialize" },
+    { "addr": "fff3", "comm": "KERNAL Warm Start – Restart BASIC without clearing RAM" },
+    { "addr": "fff6", "comm": "KERNAL Signature – Contains ASCII 'RRBY' (for ROM ID)" },
+    { "addr": "fff9", "comm": "IRQ Vector – Address of the current interrupt handler" },
+    { "addr": "fffc", "comm": "NMI Vector – Non-maskable interrupt vector" },
+    { "addr": "fffe", "comm": "RESET Vector – Hardware reset vector" },
+ 
+
+
+    { "addr": "033A", "comm": "Config" },
+
+    { "addr": "AF00", "comm": "Mode Register" },
+    { "addr": "AF10", "comm": "Lightpen" },
+    { "addr": "AF30", "comm": "Hardcopy" },
+    { "addr": "AF70", "comm": "CMD/Status" },
+    { "addr": "AF71", "comm": "Control1" },
+    { "addr": "AF72", "comm": "Control2" },
+    { "addr": "AF73", "comm": "CSize" },
+    { "addr": "AF74", "comm": "Res1" },
+    { "addr": "AF75", "comm": "DeltaX" },
+    { "addr": "AF76", "comm": "Res2" },
+    { "addr": "AF77", "comm": "DeltaY" },
+    { "addr": "AF78", "comm": "X MSB" },
+    { "addr": "AF79", "comm": "X LSB" },
+    { "addr": "AF7A", "comm": "Y MSB" },
+    { "addr": "AF7B", "comm": "Y LSB" },
+    { "addr": "AF7C", "comm": "XLP" },
+    { "addr": "AF7D", "comm": "YLP" }
+
+  ]
+}
